@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGS-IMSC INSTITUTE, MANDYA — I PUC KCET-1 Score Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070b14;
+    --bg2:#0e1729;
+    --glow:#13c2c2;
+    --glow2:#4f7cff;
+    --card:#0f1826;
+    --card-border:rgba(255,255,255,0.08);
+    --ink:#eef2fb;
+    --ink-soft:#aeb9d0;
+    --muted:#6b778f;
+    --chip:#141f30;
+    --accent:#13c2c2;
+    --accent2:#4f7cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    min-height:100vh;
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(79,124,255,0.22), transparent 60%),
+      radial-gradient(800px 500px at 90% 0%, rgba(19,194,194,0.20), transparent 55%),
+      linear-gradient(180deg, var(--bg2), var(--bg) 60%);
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:44px 18px 60px;
+  }
+  .wrap{width:100%;max-width:640px;}
+
+  /* Header */
+  .brand{text-align:center;margin-bottom:8px;}
+  .crest{
+    width:64px;height:64px;margin:0 auto 16px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:#04121f;
+    box-shadow:0 10px 30px rgba(19,194,194,0.35);
+  }
+  .brand h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.9rem;
+    letter-spacing:-0.4px;
+    line-height:1.15;
+    background:linear-gradient(180deg,#ffffff,#c7d2ea);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .subline{color:var(--ink-soft);font-size:0.9rem;margin-top:6px;font-weight:500;}
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:18px;
+    padding:9px 18px;
+    border-radius:999px;
+    border:1px solid rgba(19,194,194,0.35);
+    background:rgba(19,194,194,0.08);
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:0.78rem;
+    letter-spacing:0.6px;
+    color:#8ff0f0;
+  }
+  .badge-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);}
+
+  /* Card */
+  .card{
+    position:relative;
+    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border:1px solid var(--card-border);
+    border-radius:24px;
+    padding:24px;
+    margin-top:26px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 30px 80px rgba(0,0,0,0.55);
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;border-radius:24px;padding:1px;
+    background:linear-gradient(135deg, rgba(19,194,194,0.5), transparent 40%, rgba(79,124,255,0.5));
+    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:0.6;
+  }
+
+  .search-row{display:flex;gap:10px;position:relative;z-index:1;}
+  .input-wrap{flex:1;position:relative;}
+  .input-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:0.55;}
+  .search-row input{
+    width:100%;
+    padding:14px 16px 14px 42px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.10);
+    background:rgba(255,255,255,0.03);
+    font-size:0.95rem;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    color:var(--ink);
+    outline:none;
+    text-transform:uppercase;
+    transition:border .2s, box-shadow .2s;
+  }
+  .search-row input::placeholder{color:#5c6884;text-transform:none;}
+  .search-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(19,194,194,0.18);}
+  .btn{
+    padding:14px 20px;
+    border-radius:14px;
+    border:none;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:0.9rem;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:transform .12s, filter .2s;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-search{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#04121f;}
+  .btn-search:hover{filter:brightness(1.08);}
+  .btn-print{background:rgba(255,255,255,0.08);color:var(--ink);border:1px solid rgba(255,255,255,0.12);}
+  .btn-print:hover{background:rgba(255,255,255,0.14);}
+
+  .error{
+    display:none;
+    margin-top:14px;
+    padding:11px 14px;
+    border-radius:12px;
+    background:rgba(255,90,110,0.10);
+    border:1px solid rgba(255,90,110,0.35);
+    color:#ff9aa8;
+    font-size:0.83rem;
+    position:relative;z-index:1;
+  }
+
+  /* Result */
+  .result{display:none;margin-top:22px;position:relative;z-index:1;}
+  .result-header{display:flex;align-items:center;gap:15px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .avatar{
+    width:56px;height:56px;border-radius:16px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#04121f;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    box-shadow:0 8px 22px rgba(79,124,255,0.35);
+  }
+  .result-header .rname{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:var(--ink);}
+  .result-header .rmeta{color:var(--muted);font-size:0.85rem;margin-top:3px;letter-spacing:0.3px;}
+
+  .subject-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:20px;
+  }
+  .subject-box{
+    position:relative;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:16px 16px 15px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    overflow:hidden;
+  }
+  .subject-box::after{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,var(--accent),var(--accent2));
+    opacity:0.85;
+  }
+  .subject-box .label{color:var(--ink-soft);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:600;}
+  .subject-box .value{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.7rem;color:#ffc93c;margin-top:6px;line-height:1;text-shadow:0 0 18px rgba(255,201,60,0.35);}
+  .subject-box .value .slash{color:var(--muted);font-size:1rem;font-weight:500;}
+  .subject-box .maxline{color:var(--muted);font-size:0.75rem;margin-top:5px;}
+  .subject-box.absent::after{background:linear-gradient(180deg,#f0a33c,#e0724a);}
+  .subject-box.absent .value{color:#f4b45f;}
+
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--ink-soft);
+    font-size:0.86rem;font-weight:600;cursor:pointer;
+  }
+  .back-link:hover{color:var(--accent);}
+
+  .footer{text-align:center;margin-top:26px;color:#586179;font-size:0.8rem;}
+  .footer b{color:#9fb0d0;}
+
+  @media print{
+    body{background:#fff;color:#000;padding:0;}
+    .brand h1{color:#000;-webkit-text-fill-color:#000;}
+    .subline,.footer{color:#000;}
+    .badge-pill{border-color:#000;color:#000;background:none;}
+    .search-row,.back-link{display:none !important;}
+    .card{box-shadow:none;border:1px solid #ccc;background:#fff;backdrop-filter:none;}
+    .card::before{display:none;}
+    .subject-box{background:#fff;}
+    .subject-box .value{color:#b8860b;text-shadow:none;}
+    .avatar{color:#fff;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="crest">BGS</div>
+    <h1>BGS-IMSC INSTITUTE, MANDYA</h1>
+    <div class="badge-pill"><span class="dot"></span>II PUC KCET SCORE CARD &middot; 04-07-2026</div>
+  </div>
+
+  <div class="card">
+    <div class="search-row" id="searchRow">
+      <div class="input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8ff0f0" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="rollInput" placeholder="Enter Father Mobile Number" autocomplete="off">
+      </div>
+      <button class="btn btn-search" onclick="lookupResult()">Search</button>
+      <button class="btn btn-print" id="printBtn" onclick="window.print()" style="display:none;">Print</button>
+    </div>
+    <div class="error" id="errorMsg">No record found for this Father Mobile Number. Please check and try again.</div>
+
+    <div class="result" id="resultPanel">
+      <div class="result-header">
+        <div class="avatar" id="rAvatar"></div>
+        <div>
+          <div class="rname" id="rName"></div>
+          <div class="rmeta" id="rMeta"></div>
+        </div>
+      </div>
+      <div class="subject-grid" id="subjectGrid"></div>
+      <span class="back-link" onclick="resetForm()">&larr; Check another result</span>
+    </div>
+  </div>
+
+  <div class="footer">Vidhyaa Cyber &middot; <b>myresultsin</b></div>
+</div>
+
+<script>
+const students = [{"roll": "8861740307", "name": "BHARATH G L", "subjects": [{"name": "Physics", "marks": 19, "max": 60}, {"name": "Chemistry", "marks": 12, "max": 60}, {"name": "Mathematics", "marks": 15, "max": 60}, {"name": "Biology", "marks": 17, "max": 60}]}, {"roll": "9902316908", "name": "BINDU", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 20, "max": 60}, {"name": "Mathematics", "marks": 18, "max": 60}, {"name": "Biology", "marks": 21, "max": 60}]}, {"roll": "9449746642", "name": "DHANYA D", "subjects": [{"name": "Physics", "marks": 23, "max": 60}, {"name": "Chemistry", "marks": 26, "max": 60}, {"name": "Mathematics", "marks": 18, "max": 60}, {"name": "Biology", "marks": 29, "max": 60}]}, {"roll": "8105626832", "name": "DHRUTHI T C", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 19, "max": 60}, {"name": "Mathematics", "marks": 11, "max": 60}, {"name": "Biology", "marks": 36, "max": 60}]}, {"roll": "9844463557", "name": "DURGAMBIKA K G", "subjects": [{"name": "Physics", "marks": 35, "max": 60}, {"name": "Chemistry", "marks": 31, "max": 60}, {"name": "Mathematics", "marks": 6, "max": 60}, {"name": "Biology", "marks": 36, "max": 60}]}, {"roll": "9148773555", "name": "GAGANA M U", "subjects": [{"name": "Physics", "marks": 18, "max": 60}, {"name": "Chemistry", "marks": 27, "max": 60}, {"name": "Mathematics", "marks": 10, "max": 60}, {"name": "Biology", "marks": 21, "max": 60}]}, {"roll": "9606501346", "name": "GIRISH G M", "subjects": [{"name": "Physics", "marks": "A", "max": 60}, {"name": "Chemistry", "marks": "A", "max": 60}, {"name": "Mathematics", "marks": "A", "max": 60}, {"name": "Biology", "marks": "A", "max": 60}]}, {"roll": "9482463055", "name": "JAHANAVI M C", "subjects": [{"name": "Physics", "marks": 41, "max": 60}, {"name": "Chemistry", "marks": 32, "max": 60}, {"name": "Mathematics", "marks": 31, "max": 60}, {"name": "Biology", "marks": 45, "max": 60}]}, {"roll": "8660731438", "name": "JEEVITHA S", "subjects": [{"name": "Physics", "marks": "A", "max": 60}, {"name": "Chemistry", "marks": "A", "max": 60}, {"name": "Mathematics", "marks": "A", "max": 60}, {"name": "Biology", "marks": "A", "max": 60}]}, {"roll": "8217661736", "name": "KARTHIK GOWDA H B", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 23, "max": 60}, {"name": "Mathematics", "marks": 5, "max": 60}, {"name": "Biology", "marks": 31, "max": 60}]}, {"roll": "9916654746", "name": "KAVANA U R", "subjects": [{"name": "Physics", "marks": 25, "max": 60}, {"name": "Chemistry", "marks": 22, "max": 60}, {"name": "Mathematics", "marks": 14, "max": 60}, {"name": "Biology", "marks": 32, "max": 60}]}, {"roll": "9972304719", "name": "KIRANMAYI L", "subjects": [{"name": "Physics", "marks": 29, "max": 60}, {"name": "Chemistry", "marks": 26, "max": 60}, {"name": "Mathematics", "marks": 18, "max": 60}, {"name": "Biology", "marks": 32, "max": 60}]}, {"roll": "9620816139", "name": "KOMALA K", "subjects": [{"name": "Physics", "marks": 27, "max": 60}, {"name": "Chemistry", "marks": 18, "max": 60}, {"name": "Mathematics", "marks": 8, "max": 60}, {"name": "Biology", "marks": 25, "max": 60}]}, {"roll": "9164714730", "name": "MANASWI S KANTH", "subjects": [{"name": "Physics", "marks": 20, "max": 60}, {"name": "Chemistry", "marks": 14, "max": 60}, {"name": "Mathematics", "marks": 16, "max": 60}, {"name": "Biology", "marks": 21, "max": 60}]}, {"roll": "6361351498", "name": "MANYA P", "subjects": [{"name": "Physics", "marks": 42, "max": 60}, {"name": "Chemistry", "marks": 34, "max": 60}, {"name": "Mathematics", "marks": 31, "max": 60}, {"name": "Biology", "marks": 45, "max": 60}]}, {"roll": "9243968082", "name": "N S NAGAVASUNDHARA", "subjects": [{"name": "Physics", "marks": 23, "max": 60}, {"name": "Chemistry", "marks": 26, "max": 60}, {"name": "Mathematics", "marks": 19, "max": 60}, {"name": "Biology", "marks": "CS", "max": 60}]}, {"roll": "8867825787", "name": "NAKUL YADAV R", "subjects": [{"name": "Physics", "marks": "A", "max": 60}, {"name": "Chemistry", "marks": "A", "max": 60}, {"name": "Mathematics", "marks": "A", "max": 60}, {"name": "Biology", "marks": "A", "max": 60}]}, {"roll": "9740660267", "name": "NAYANA M R", "subjects": [{"name": "Physics", "marks": 20, "max": 60}, {"name": "Chemistry", "marks": 18, "max": 60}, {"name": "Mathematics", "marks": 14, "max": 60}, {"name": "Biology", "marks": 22, "max": 60}]}, {"roll": "9742115480", "name": "PARINITHA K S", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 25, "max": 60}, {"name": "Mathematics", "marks": 23, "max": 60}, {"name": "Biology", "marks": 26, "max": 60}]}, {"roll": "8892432134", "name": "PAVAN K H", "subjects": [{"name": "Physics", "marks": 12, "max": 60}, {"name": "Chemistry", "marks": 10, "max": 60}, {"name": "Mathematics", "marks": 20, "max": 60}, {"name": "Biology", "marks": 25, "max": 60}]}, {"roll": "9964665667", "name": "PRAJWAL M J", "subjects": [{"name": "Physics", "marks": 10, "max": 60}, {"name": "Chemistry", "marks": 15, "max": 60}, {"name": "Mathematics", "marks": 8, "max": 60}, {"name": "Biology", "marks": 14, "max": 60}]}, {"roll": "9036898560", "name": "PREKSHA B M", "subjects": [{"name": "Physics", "marks": 19, "max": 60}, {"name": "Chemistry", "marks": 23, "max": 60}, {"name": "Mathematics", "marks": 12, "max": 60}, {"name": "Biology", "marks": 28, "max": 60}]}, {"roll": "9620067969", "name": "PRIYADARSHINI K N", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 19, "max": 60}, {"name": "Mathematics", "marks": 25, "max": 60}, {"name": "Biology", "marks": 17, "max": 60}]}, {"roll": "9663047020", "name": "PRUTHVIK R", "subjects": [{"name": "Physics", "marks": 24, "max": 60}, {"name": "Chemistry", "marks": 23, "max": 60}, {"name": "Mathematics", "marks": 18, "max": 60}, {"name": "Biology", "marks": 32, "max": 60}]}, {"roll": "9945471571", "name": "PUTTE GOWDA D J", "subjects": [{"name": "Physics", "marks": 25, "max": 60}, {"name": "Chemistry", "marks": 24, "max": 60}, {"name": "Mathematics", "marks": 21, "max": 60}, {"name": "Biology", "marks": "CS", "max": 60}]}, {"roll": "9482084791", "name": "SAMYAMA B S", "subjects": [{"name": "Physics", "marks": 16, "max": 60}, {"name": "Chemistry", "marks": 20, "max": 60}, {"name": "Mathematics", "marks": 11, "max": 60}, {"name": "Biology", "marks": 21, "max": 60}]}, {"roll": "6360128936", "name": "SANIKA K P", "subjects": [{"name": "Physics", "marks": 22, "max": 60}, {"name": "Chemistry", "marks": 24, "max": 60}, {"name": "Mathematics", "marks": 25, "max": 60}, {"name": "Biology", "marks": 34, "max": 60}]}, {"roll": "9980640607", "name": "SINCHANA R", "subjects": [{"name": "Physics", "marks": 21, "max": 60}, {"name": "Chemistry", "marks": 22, "max": 60}, {"name": "Mathematics", "marks": 18, "max": 60}, {"name": "Biology", "marks": 22, "max": 60}]}, {"roll": "9008237228", "name": "SRINIVAS", "subjects": [{"name": "Physics", "marks": 30, "max": 60}, {"name": "Chemistry", "marks": 19, "max": 60}, {"name": "Mathematics", "marks": 15, "max": 60}, {"name": "Biology", "marks": 19, "max": 60}]}, {"roll": "9972687448", "name": "TANUSHREE B S", "subjects": [{"name": "Physics", "marks": 17, "max": 60}, {"name": "Chemistry", "marks": 15, "max": 60}, {"name": "Mathematics", "marks": 11, "max": 60}, {"name": "Biology", "marks": 31, "max": 60}]}, {"roll": "9916664292", "name": "THRUPTHI M", "subjects": [{"name": "Physics", "marks": 23, "max": 60}, {"name": "Chemistry", "marks": 20, "max": 60}, {"name": "Mathematics", "marks": 15, "max": 60}, {"name": "Biology", "marks": 23, "max": 60}]}, {"roll": "8884899090", "name": "VEDIKA D Y", "subjects": [{"name": "Physics", "marks": 17, "max": 60}, {"name": "Chemistry", "marks": 22, "max": 60}, {"name": "Mathematics", "marks": 13, "max": 60}, {"name": "Biology", "marks": 32, "max": 60}]}, {"roll": "9964909610", "name": "YAMUNA H J", "subjects": [{"name": "Physics", "marks": 30, "max": 60}, {"name": "Chemistry", "marks": 23, "max": 60}, {"name": "Mathematics", "marks": 25, "max": 60}, {"name": "Biology", "marks": 34, "max": 60}]}];
+
+function initials(name){
+  const parts = name.trim().split(/\s+/);
+  let out = parts[0][0];
+  if(parts.length > 1) out += parts[1][0];
+  return out.toUpperCase();
+}
+
+function lookupResult(){
+  const val = document.getElementById('rollInput').value.trim().toUpperCase();
+  const errBox = document.getElementById('errorMsg');
+  errBox.style.display = 'none';
+  if(!val){
+    errBox.textContent = 'Please enter Father Mobile Number.';
+    errBox.style.display = 'block';
+    return;
+  }
+  const student = students.find(s => s.roll.toUpperCase() === val);
+  if(!student){
+    document.getElementById('resultPanel').style.display = 'none';
+    document.getElementById('printBtn').style.display = 'none';
+    errBox.textContent = 'No record found for this Father Mobile Number. Please check and try again.';
+    errBox.style.display = 'block';
+    return;
+  }
+  showResult(student);
+}
+
+function showResult(student){
+  document.getElementById('rAvatar').textContent = initials(student.name);
+  document.getElementById('rName').textContent = student.name;
+  document.getElementById('rMeta').textContent = 'Father Mobile No. ' + student.roll;
+
+  const grid = document.getElementById('subjectGrid');
+  grid.innerHTML = '';
+
+  student.subjects.forEach(sub => {
+    const isAbsent = (typeof sub.marks === 'string' && sub.marks.toUpperCase() === 'AB');
+    const box = document.createElement('div');
+    box.className = 'subject-box' + (isAbsent ? ' absent' : '');
+    const valueText = isAbsent
+      ? 'AB'
+      : sub.marks + '<span class="slash"> / ' + sub.max + '</span>';
+    box.innerHTML = '<div class="label">' + sub.name + '</div>' +
+                     '<div class="value">' + valueText + '</div>' +
+                     '<div class="maxline">Max marks: ' + sub.max + '</div>';
+    grid.appendChild(box);
+  });
+
+  document.getElementById('resultPanel').style.display = 'block';
+  document.getElementById('printBtn').style.display = 'inline-block';
+}
+
+function resetForm(){
+  document.getElementById('resultPanel').style.display = 'none';
+  document.getElementById('printBtn').style.display = 'none';
+  document.getElementById('rollInput').value = '';
+  document.getElementById('errorMsg').style.display = 'none';
+}
+
+document.getElementById('rollInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') lookupResult();
+});
+</script>
+</body>
+</html>
